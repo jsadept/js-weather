@@ -1,0 +1,36 @@
+.weather-app{
+    width: 200px;
+
+    border-radius: 10px;
+    background-color: #F4F9FF;
+    margin: 20px;
+    padding: 40px 0;
+}
+
+
+.weather-app__title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    padding: 20px;
+    margin: 0;
+}
+
+.weather-app__content{
+    padding: 20px;
+    background-color: #cde4ff;
+}
+
+.weather-app__notification{
+    padding: 0 20px;
+    text-align: center;
+    display: none;
+}
+.weather-app__icon{
+    width: 50%;
+    margin: 0 auto;
+}
+.weather-app__icon-image{
+    width: 100%;
+    height: 100%;
+}
