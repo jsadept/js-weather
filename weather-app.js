@@ -15,6 +15,7 @@ weather.temperature = {
 // APP CONSTS AND VARS
 const celsiusToKelvin = (celsius) => celsius + 273.15;
 const celsiusToFahrenheit = (celsius) => (celsius * 9/5) + 32;
+const kelvinToCelsius = (kelvin) => kelvin - 273.15;
 // API KEY
 const key = "07232afb8bc1f80de67c9daab8e0f5d8";
 
@@ -27,6 +28,26 @@ if('geolocation' in navigator){
 }
 
 
+// GET WEATHER FROM API
+function getWeather(latitude, longitude){
+	let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+
+	fetch(api)
+		.then(function(response){
+			let data = response.json();
+			return data;
+		})
+		.then(function(data){
+			weather.temperature.value = Math.floor(kelvinToCelsius(data.main.temp));
+			weather.description = data.weather[0].description;
+			weather.city = data.name;
+			weather.country = data.sys.country;
+		})
+		.then(function(){
+			displayWeather();
+		});
+}
+
 function setPosition(position){
 	// SET USER'S POSITION
 }
@@ -35,12 +56,6 @@ function setPosition(position){
 function showError(error){
 	// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
 }
-
-
-function getWeather(latitude, longitude){
-	// GET WEATHER FROM API
-}
-
 
 function displayWeather(){
 	// DISPLAY WEATHER TO UI
