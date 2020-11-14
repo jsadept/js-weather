@@ -1,6 +1,5 @@
 // SELECT ELEMENTS
-const iconElement = document.querySelector(".weather-app__icon-image");
-const tempElement = document.querySelector(".weather-app__value p");
+const valueElement = document.querySelector(".weather-app__value p");
 const descElement = document.querySelector(".weather-app__description p");
 const locationElement = document.querySelector(".weather-app__location p");
 const notificationElement = document.querySelector(".weather-app__notification");
@@ -48,15 +47,23 @@ function getWeather(latitude, longitude){
 		});
 }
 
+// SET USER'S POSITION
 function setPosition(position){
-	// SET USER'S POSITION
+	let latitude = position.coords.latitude;
+	let longitude = position.coords.longitude;
+	getWeather(latitude, longitude);
 }
 
 
+// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
 function showError(error){
-	// SHOW ERROR WHEN THERE IS AN ISSUE WITH GEOLOCATION SERVICE
+	notificationElement.style.display = "block";
+	notificationElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
+// DISPLAY WEATHER TO UI
 function displayWeather(){
-	// DISPLAY WEATHER TO UI
+	valueElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+	descElement.innerHTML = weather.description;
+	locationElement.innerHTML = `${weather.city}, ${weather.country}`;
 }
