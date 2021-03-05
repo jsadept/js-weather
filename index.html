@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Weather App Demonstation</title>
+    <title>Weather App Demonstration</title>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,7 +12,45 @@
 <body>
 
     <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi excepturi magni maiores nam natus numquam obcaecati quo repellendus sunt!
+
+        <h2>To use the weather widget, you need:</h2>
+        <br>
+        <br>
+        1) add HTML code to the place where you want to see the widget:
+        <br>
+        <br>
+        <div class="code">
+            <code>
+                &lt;div class=&quot;weather-app&quot; id=&quot;weather-app&quot;&gt;<br/>
+                &lt;h2 class=&quot;weather-app__title&quot;&gt;Weather&lt;/h2&gt;<br/>
+                &lt;div class=&quot;weather-app__icon&quot;&gt;<br/>
+                &lt;img src=&quot;icons/weather.png&quot; alt=&quot;weather-icon&quot; class=&quot;weather-app__icon-image&quot;&gt;<br/>
+                &lt;/div&gt;<br/>
+                &lt;div class=&quot;weather-app__content&quot;&gt;<br/>
+                &lt;div class=&quot;weather-app__notification&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;<br/>
+                &lt;div class=&quot;weather-app__value&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;<br/>
+                &lt;div class=&quot;weather-app__description&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;<br/>
+                &lt;div class=&quot;weather-app__location&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;<br/>
+                &lt;/div&gt;<br/>
+                &lt;/div&gt;
+            </code>
+        </div>
+        <br>
+        <br>
+        <br>
+        2) include CSS and JS files:
+        <br>
+        <br>
+        <div class="code">
+            <code>
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;weather-app.css&quot;&gt;
+                <br>
+                &lt;script src=&quot;weather-app.js&quot;&gt;&lt;/script&gt;
+            </code>
+        </div>
+        <br>
+        <br>
+        It works only if you allow the geolocation in the browser
     </div>
 
     <div class="weather-app" id="weather-app">
@@ -21,17 +59,10 @@
             <img src="icons/weather.png" alt="weather-icon" class="weather-app__icon-image">
         </div>
         <div class="weather-app__content">
-            <div class="weather-app__notification"></div>
-
-            <div class="weather-app__value">
-                <p>- °<span>C</span></p>
-            </div>
-            <div class="weather-app__description">
-                <p> - </p>
-            </div>
-            <div class="weather-app__location">
-                <p>-</p>
-            </div>
+            <div class="weather-app__notification"><p></p></div>
+            <div class="weather-app__value"><p></p></div>
+            <div class="weather-app__description"><p></p></div>
+            <div class="weather-app__location"><p></p></div>
         </div>
     </div>
 
